@@ -20,27 +20,27 @@
 
     .contenedor {
       display: grid;
-      grid-template-columns: 20% 20% 20% 20% 20% 20%;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
       gap: 10px;
       border: 2px solid #000;
       padding: 20px; 
-      max-height: 300vh;
-      max-width: 100vh;
+      max-height: 500vh;
+      max-width: 90vh;
       overflow-y: auto;
       overflow-x: auto;
-      justify-content: center; 
-      align-items: center; 
     }
 
     .seccion {
       border: 1px solid #000;
       padding: 10px;
       box-sizing: content-box;
+      width: 150px; /* Fijé el ancho de .seccion */
     }
 
     .rectangle {
       border: 1px solid #000;
-      padding: 50px; 
+      padding: 50px;
+      width: 100px;
       box-sizing: border-box;
     }
   </style>
@@ -60,6 +60,9 @@
     <div class="rectangle">Seccion 7</div>
     <div class="rectangle">Seccion 8</div>
     <div class="rectangle">Seccion 9</div>
+    <div class="rectangle">Seccion 10</div>
+    <div class="rectangle">Seccion 11</div>
+    <div class="rectangle">Seccion 12</div>
   </div>
 
 </body>
