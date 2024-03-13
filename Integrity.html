@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+    }
+    .header {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    .contenedor {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      gap: 10px;
+      border: 2px solid #000;
+      padding: 20px; 
+      max-height: 500vh;
+      max-width: 90vh;
+      max-height: 1000px;
+      max-width: 900px;
+      overflow-y: auto;
+      overflow-x: auto;
+    }
+    .contenedor2 {
+      border: 2px solid #00f;
+      padding: 20px;
+      margin-top: 50px;
+      max-width: 900px;
+      overflow-y: auto;
+      overflow-x: auto;
+
+    }
+
+    .seccion {
+      border: 1px solid #000;
+      padding: 10px;
+      box-sizing: content-box;
+      width: 250px;
+    }
+
+    .rectangle {
+      border: 1px solid #000;
+      padding: 50px;
+      box-sizing: border-box;
+      padding: 10px;
+      width: 250px;
+      height: 300px;
+      box-sizing: content-box;
+    }
+
+    img{
+      width: 80px;
+      height: 80px;
+    }
+  </style>
+</head>
+<body>
+    <h1 class="header">THE SELF SANDWICH</h1>
+    <h2 class="header">Create your sandwich</h2>
+    <div class="contenedor">
+        <div class="seccion">Bread</div>
+        <div class="seccion">Protein</div>
+        <div class="seccion">Cheese</div>
+        <div class="seccion">Method</div>
+        <div class="seccion">Vegetables</div>
+        <div class="seccion">Sauce</div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="rectangle" id="boxBread">
+                    <table>
+                        <tr>
+                        <td><lable>White Bread</lable></td>
+                        <td><img src="C:\Users\angel\Desktop\TheSS\WhiteBreadIcon.jpg" alt="" id="white" class="bread"></td>
+                        </tr>
+                        <tr>
+                        <td><lable>Wholemeal Bread</lable></td>
+                        <td><img src="C:\Users\angel\Desktop\TheSS\wholemealBreadIcon.jpg" alt="" id="whole" class="bread"></td>
+                        </tr>
+                        <tr>
+                        <td><lable>Garlic Bread</lable></td>
+                        <td><img src="C:\Users\angel\Desktop\TheSS\GarlicBreadIcon.jpg" alt="" id="garlic" class="bread"></td>
+                        </tr>
+                    </table>
+                </div>    
+            </div>    
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="rectangle" id="boxProtein">
+                    <table>
+                        <tr>
+                        <td><lable>RoastBeaf</lable></td>
+                        <td><img src="C:\Users\angel\Desktop\TheSS\BeafIcon.png" alt="" id="beaf" class="protein"></td>
+                        </tr>
+                        <tr>
+                        <td><lable>GrillChicken</lable></td>
+                        <td><img src="C:\Users\angel\Desktop\TheSS\chickenIcon.jpg" alt="" id="chick" class="protein"></td>
+                        </tr>
+                        <tr>
+                        <td><lable>Mushrooms</lable></td>
+                        <td><img src="C:\Users\angel\Desktop\TheSS\MushroomIcon.png" alt="" id="mush" class="protein"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="rectangle" id="boxCheese">
+                    <table>
+                        <tr>
+                        <td><lable>Cheddar</lable></td>
+                        <td><img src="C:\Users\angel\Desktop\TheSS\cheddarIcon.png" alt="" id="chedd" class="cheese"></td>
+                        </tr>
+                        <tr>
+                        <td><lable>Gruyere</lable></td>
+                        <td><img src="C:\Users\angel\Desktop\TheSS\gruyereIcon.jpg" alt="" id="gruy" class="cheese"></td>
+                        </tr>
+                        <tr>
+                        <td><lable>Mozzarella</lable></td>
+                        <td><img src="C:\Users\angel\Desktop\TheSS\mozarellaIcon.png" alt="" id="moz" class="cheese"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="rectangle">Method
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="rectangle" id="boxVege">
+                    <table>
+                        <tr>
+                        <td><lable>Green Lettuce</lable></td>
+                        <td><img src="C:\Users\angel\Desktop\TheSS\GLettuceIcon.png" alt="" id="glettuce" class="vegetable"></td>
+                        </tr>
+                        <tr>
+                        <td><lable>Pikles</lable></td>
+                        <td><img src="C:\Users\angel\Desktop\TheSS\peaklesIcon.png" alt="" id="pikles" class="vegetable"></td>
+                        </tr>
+                        <tr>
+                        <td><lable>Purple Lettuce</lable></td>
+                        <td><img src="C:\Users\angel\Desktop\TheSS\plettuceIcon.png" alt="" id="plettuce" class="vegetable"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="rectangle">Seccion 12
+
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="col-md-6">
+        <div class="contenedor2" id="boxSelected">
+  
+        </div>
+    </div>
+
+    <script>
+        var vboxSelected = document.getElementById("boxSelected");
+        var vboxBread = document.getElementById("boxBread");
+        var vboxProtein = document.getElementById("boxProtein");
+        var vboxCheese = document.getElementById("boxCheese");
+        var vboxVege = document.getElementById("boxVege");
+        var ptin = document.getElementsByClassName("protein");
+        var chees = document.getElementsByClassName("cheese");
+        var vege = document.getElementsByClassName("vegetable");
+        var brea = document.getElementsByClassName("bread");
+        
+    
+        vboxSelected.addEventListener("dragover",(ev) => allowDrop(ev));
+        vboxSelected.addEventListener("drop",(ev) => drop(ev));
+    
+        vboxProtein.addEventListener("dragover",(ev) => allowDrop(ev));
+        vboxProtein.addEventListener("drop",(ev) => drop1(ev));
+    
+        vboxCheese.addEventListener("dragover",(ev) => allowDrop(ev));
+        vboxCheese.addEventListener("drop",(ev) => drop1(ev));
+    
+        vboxVege.addEventListener("dragover",(ev) => allowDrop(ev));
+        vboxVege.addEventListener("drop",(ev) => drop1(ev));
+
+        for (var i=0; i<ptin.length; i++){
+          brea[i].setAttribute("draggable","true");
+          brea[i].addEventListener("dragstart",(ev) => startDrag(ev))
+        }
+    
+        for (var i=0; i<ptin.length; i++){
+          ptin[i].setAttribute("draggable","true");
+          ptin[i].addEventListener("dragstart",(ev) => startDrag(ev))
+        }
+    
+        for (var i=0; i<chees.length; i++){
+          chees[i].setAttribute("draggable","true");
+          chees[i].addEventListener("dragstart",(ev) => startDrag(ev))
+        }
+    
+        for (var i=0; i<vege.length; i++){
+          vege[i].setAttribute("draggable","true");
+          vege[i].addEventListener("dragstart",(ev) => startDrag(ev))
+        }
+        function startDrag(ev) {
+          ev.dataTransfer.setData("id", ev.target.id);
+          //console.log(ev.target.id)
+        }
+        function allowDrop(ev) {
+          console.log("Dropping");
+          ev.preventDefault();
+        }
+        function drop(ev) {
+          ev.preventDefault();
+          var data = ev.dataTransfer.getData("id");
+          vboxSelected.appendChild(document.getElementById(data));
+          console.log(data);
+        }
+    
+        function drop1(ev) {
+          if(ClassName = "protein"){
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("id");
+            vboxProtein.appendChild(document.getElementById(data));
+            console.log("return"+[data]);
+            console.log(vboxProtein);
+          }
+         else{
+            if(ClassName = "cheese"){
+              ev.preventDefault();
+              var data = ev.dataTransfer.getData("id");
+              vboxCheese.appendChild(document.getElementById(data));
+              console.log("return"+[data]);}
+            else{
+              if(ClassName = "vegetable"){
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("id");
+                vboxVege.appendChild(document.getElementById(data));
+                console.log("return"+[data]);}
+              }
+            }
+          }
+    
+        
+      </script>
+</body>
+</html>

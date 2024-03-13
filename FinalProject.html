@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TheSelfSandwich</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      
+    }
+    .box{
+      border: 1px solid #000;
+      padding: 10px;
+      box-sizing: border-box;
+      width: 350px;
+      height: 350px;
+    }
+    img{
+      width: 100px;
+      height: 90px;  
+    }
+    
+  </style>
+</head>
+<body>
+
+<h1 text-align="center">The Self Sandwich</h1>
+<h2 text-align="center">Choose your Sandwich</h2>
+
+<div class="container">
+    <div class="box">
+        <p><img src="C:\Users\angel\Desktop\TheSS\Beaf.jpg" alt="" draggable="true" ondragstart="drag(event)" id="protein"></p>
+        <p><img src="C:\Users\angel\Desktop\TheSS\chicken.jpg" alt="" draggable="true" ondragstart="drag(event)" id="protein"></p>
+        <p><img src="C:\Users\angel\Desktop\TheSS\Mushrooms.jpg" alt="" draggable="true" ondragstart="drag(event)" id="protein"></p>
+    </div>
+
+    <div class="box">
+        <p><img src="C:\Users\angel\Desktop\TheSS\GreenLettuce.jpg" alt="" draggable="true" ondragstart="drag(event)" id="vegetable"></p>
+        <p><img src="C:\Users\angel\Desktop\TheSS\PurpleLettuce.jpg" alt="" draggable="true" ondragstart="drag(event)" id="vegetable"></p>
+        <p><img src="C:\Users\angel\Desktop\TheSS\Pikles.jpg" alt="" draggable="true" ondragstart="drag(event)" id="vegetable"></p>
+    </div>
+
+
+    <div class="box">
+        <p><img src="C:\Users\angel\Desktop\TheSS\Cheddar.jpg" alt="" draggable="true" ondragstart="drag(event)" id="cheese"></p>
+        <p><img src="C:\Users\angel\Desktop\TheSS\gruyere.jpg" alt="" draggable="true" ondragstart="drag(event)" id="cheese"></p>
+        <p><img src="C:\Users\angel\Desktop\TheSS\Mozarella.jpg" alt="" draggable="true" ondragstart="drag(event)" id="cheese"></p>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="figura">
+        <h3>Protein</h3>
+        <div class="box" id="0" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+    <div class="figura">
+        <h3>Vegetables</h3>
+        <div class="box" id="1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+    <div class="figura">
+        <h3>Cheese</h3>
+        <div class="box" id="2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+</div>
+<script src=FProject.js></script>
+</body>
+</html>
