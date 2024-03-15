@@ -30,6 +30,8 @@
       overflow-x: auto;
     }
     .contenedor2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       border: 2px solid #00f;
       padding: 20px;
       margin-top: 50px;
@@ -55,10 +57,22 @@
       height: 300px;
       box-sizing: content-box;
     }
+    .item{
+      border: 1px solid #000;
+      padding: 50px;
+      box-sizing: border-box;
+      padding: 10px;
+      width: 100px;
+      height: 150px;
+      box-sizing: content-box;
+    }
 
     img{
       width: 80px;
       height: 80px;
+    }
+    table{
+      border: 1px solid #000;
     }
   </style>
 </head>
@@ -182,25 +196,22 @@
             </div>
         </div>
     </div>
-  
-    <div class="col-md-6">
-        <div class="contenedor2" id="boxSelected">
-          <table>
-            <tr>
-            <th>Ingredient</th>
-            <th>Price</th>
-            </tr>
-            <tr>
-            <td></td>
-            <td></td>
-            </tr>
-            <tr>
-            <td></td>
-            <td></td>
-            </tr>
-        </table>
-  
+    <div class="contenedor2">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="item" id="ingredients">
+            <input type="button" value="Genera una tabla" onclick="genera_tabla()" />
+          </div>
         </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="item" id="boxSelected">
+          
+            
+          </div>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -210,11 +221,14 @@
         var vboxCheese = document.getElementById("boxCheese");
         var vboxVege = document.getElementById("boxVege");
         var vboxSauce = document.getElementById("boxSauce");
+        var vboxIngredient = document.getElementById("vboxIngredient");
         var ptin = document.getElementsByClassName("protein");
         var chees = document.getElementsByClassName("cheese");
         var vege = document.getElementsByClassName("vegetable");
         var brea = document.getElementsByClassName("bread");
         var sauc = document.getElementsByClassName("sauce");
+        
+        listaDeItems={'white':5, 'whole':7, 'garlic':10};
         
     
         vboxSelected.addEventListener("dragover",(ev) => allowDrop(ev));
@@ -228,6 +242,8 @@
     
         vboxVege.addEventListener("dragover",(ev) => allowDrop(ev));
         vboxVege.addEventListener("drop",(ev) => drop1(ev));
+
+        //vboxIngredient.createElement("Table")
 
         for (var i=0; i<ptin.length; i++){
           brea[i].setAttribute("draggable","true");
@@ -255,7 +271,6 @@
         }
         function startDrag(ev) {
           ev.dataTransfer.setData("id", ev.target.id);
-          //console.log(ev.target.id)
         }
         function allowDrop(ev) {
           console.log("Dropping");
@@ -266,7 +281,69 @@
           var data = ev.dataTransfer.getData("id");
           vboxSelected.appendChild(document.getElementById(data));
           console.log(data);
+          let int32View = new Int32Array(buffer);
+          for (let i = 0; i < int32View.length; i++) {
+            int32View[i] = data;
+          }
+          console.log(int32View[0]);
         }
+        function genera_tabla() {
+      // Obtener la referencia del elemento body
+      var body = document.getElementsByTagName("body")[0];
+
+      // Crea un elemento <table> y un elemento <tbody>
+      var tabla = document.createElement("table");
+      var tblBody = document.createElement("tbody");
+
+      // Crea las celdas
+      for (var i = 0; i < 5; i++) {
+        // Crea las hileras de la tabla
+        var hilera = document.createElement("tr");
+
+        for (var j = 0; j < 2 ; j++) {
+          // Crea un elemento <td> y un nodo de texto, haz que el nodo de
+          // texto sea el contenido de <td>, ubica el elemento <td> al final
+          // de la hilera de la tabla
+          var celda = document.createElement("td");
+          var textoCelda = document.createTextNode(
+            "celda en la hilera " + i + ", columna " + j,);
+          celda.appendChild(textoCelda);
+          hilera.appendChild(celda);
+        }
+
+        // agrega la hilera al final de la tabla (al final del elemento tblbody)
+        tblBody.appendChild(hilera);
+      }
+
+      // posiciona el <tbody> debajo del elemento <table>
+      tabla.appendChild(tblBody);
+      // appends <table> into <body>
+      body.appendChild(tabla);
+      // modifica el atributo "border" de la tabla y lo fija a "2";
+      tabla.setAttribute("border", "2");
+      }
+        
+          
+            
+        
+          
+
+
+          //switch(data) {
+           // case "white":
+           //   ingredients.println("Delicious White Bread");
+           //   break;
+           // case "whole":
+           // ingredients.println("Delicious White Bread");
+           //   break;
+           // case "garlic":
+           // ingredients.println("Delicious Garlic Bread");
+           //   break;
+           // default:
+           // ingredients.println("i es mayor a tres.");
+          
+          
+        
     
         function drop1(ev) {
           if(ClassName == "protein"){
