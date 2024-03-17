@@ -3,82 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100vh;
-    }
-    .header {
-      margin-top: 20px;
-      margin-bottom: 10px;
-    }
-    .contenedor {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-      gap: 10px;
-      border: 2px solid #000;
-      padding: 20px; 
-      max-height: 500vh;
-      max-width: 90vh;
-      max-height: 1000px;
-      max-width: 900px;
-      overflow-y: auto;
-      overflow-x: auto;
-    }
-    .contenedor2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border: 2px solid #00f;
-      padding: 20px;
-      margin-top: 50px;
-      max-width: 900px;
-      overflow-y: auto;
-      overflow-x: auto;
-
-    }
-
-    .seccion {
-      border: 1px solid #000;
-      padding: 10px;
-      box-sizing: content-box;
-      width: 250px;
-    }
-
-    .rectangle {
-      border: 1px solid #000;
-      padding: 50px;
-      box-sizing: border-box;
-      padding: 10px;
-      width: 250px;
-      height: 300px;
-      box-sizing: content-box;
-    }
-    .item{
-      border: 1px solid #000;
-      padding: 50px;
-      box-sizing: border-box;
-      padding: 10px;
-      width: 100px;
-      height: 150px;
-      box-sizing: content-box;
-    }
-
-    img{
-      width: 80px;
-      height: 80px;
-    }
-    table{
-      border: 1px solid #000;
-    }
-  </style>
+  <link rel="stylesheet" href="FProject.css">
+  
+  
 </head>
 <body>
+    
     <h1 class="header">THE SELF SANDWICH</h1>
-    <h2 class="header">Create your sandwich</h2>
+    <h3 class="header">Create your sandwich</h3>
     <div class="contenedor">
         <div class="seccion">Bread</div>
         <div class="seccion">Protein</div>
@@ -93,15 +25,15 @@
                     <table>
                         <tr>
                         <td><lable>White Bread</lable></td>
-                        <td><img src="WhiteBreadIcon.jpg" alt="" id="white" class="bread"></td>
+                        <td><img src="Images\WhiteBreadIcon.jpg" alt="" id="white" class="bread"></td>
                         </tr>
                         <tr>
                         <td><lable>Wholemeal Bread</lable></td>
-                        <td><img src="wholemealBreadIcon.jpg" alt="" id="whole" class="bread"></td>
+                        <td><img src="Images\wholemealBreadIcon.jpg" alt="" id="whole" class="bread"></td>
                         </tr>
                         <tr>
                         <td><lable>Garlic Bread</lable></td>
-                        <td><img src="GarlicBreadIcon.jpg" alt="" id="garlic" class="bread"></td>
+                        <td><img src="Images\GarlicBreadIcon.jpg" alt="" id="garlic" class="bread"></td>
                         </tr>
                     </table>
                 </div>    
@@ -113,15 +45,15 @@
                     <table>
                         <tr>
                         <td><lable>RoastBeaf</lable></td>
-                        <td><img src="BeafIcon.png" alt="" id="beaf" class="protein"></td>
+                        <td><img src="Images\BeafIcon.png" alt="" id="beaf" class="protein"></td>
                         </tr>
                         <tr>
                         <td><lable>GrillChicken</lable></td>
-                        <td><img src="chickenIcon.jpg" alt="" id="chick" class="protein"></td>
+                        <td><img src="Images\chickenIcon.jpg" alt="" id="chick" class="protein"></td>
                         </tr>
                         <tr>
                         <td><lable>Mushrooms</lable></td>
-                        <td><img src="MushroomIcon.png" alt="" id="mush" class="protein"></td>
+                        <td><img src="Images\MushroomIcon.png" alt="" id="mush" class="protein"></td>
                         </tr>
                     </table>
                 </div>
@@ -133,15 +65,15 @@
                     <table>
                         <tr>
                         <td><lable>Cheddar</lable></td>
-                        <td><img src="cheddarIcon.png" alt="" id="chedd" class="cheese"></td>
+                        <td><img src="Images\cheddarIcon.png" alt="" id="chedd" class="cheese"></td>
                         </tr>
                         <tr>
                         <td><lable>Gruyere</lable></td>
-                        <td><img src="gruyereIcon.jpg" alt="" id="gruy" class="cheese"></td>
+                        <td><img src="Images\gruyereIcon.jpg" alt="" id="gruy" class="cheese"></td>
                         </tr>
                         <tr>
                         <td><lable>Mozzarella</lable></td>
-                        <td><img src="mozarellaIcon.png" alt="" id="moz" class="cheese"></td>
+                        <td><img src="Images\mozarellaIcon.png" alt="" id="moz" class="cheese"></td>
                         </tr>
                     </table>
                 </div>
@@ -160,15 +92,15 @@
                     <table>
                         <tr>
                         <td><lable>Green Lettuce</lable></td>
-                        <td><img src="GLettuceIcon.png" alt="" id="glettuce" class="vegetable"></td>
+                        <td><img src="Images\GLettuceIcon.png" alt="" id="glettuce" class="vegetable"></td>
                         </tr>
                         <tr>
                         <td><lable>Pikles</lable></td>
-                        <td><img src="peaklesIcon.png" alt="" id="pikles" class="vegetable"></td>
+                        <td><img src="Images\peaklesIcon.png" alt="" id="pikles" class="vegetable"></td>
                         </tr>
                         <tr>
                         <td><lable>Purple Lettuce</lable></td>
-                        <td><img src="plettuceIcon.png" alt="" id="plettuce" class="vegetable"></td>
+                        <td><img src="Images\plettuceIcon.png" alt="" id="plettuce" class="vegetable"></td>
                         </tr>
                     </table>
                 </div>
@@ -180,15 +112,15 @@
                     <table>
                         <tr>
                         <td><lable>Hot Sauce</lable></td>
-                        <td><img src="hotSauceIcon.png" alt="" id="hotSauce" class="sauce"></td>
+                        <td><img src="Images\hotSauceIcon.png" alt="" id="hotSauce" class="sauce"></td>
                         </tr>
                         <tr>
                         <td><lable>Mustard Sauce</lable></td>
-                        <td><img src="mustardIcon.png" alt="" id="mustardSauce" class="sauce"></td>
+                        <td><img src="Images\mustardIcon.png" alt="" id="mustardSauce" class="sauce"></td>
                         </tr>
                         <tr>
                         <td><lable>Mayonnese Sauce</lable></td>
-                        <td><img src="mayoSauceIcon.png" alt="" id="mayoSauce" class="sauce"></td>
+                        <td><img src="Images\mayoSauceIcon.png" alt="" id="mayoSauce" class="sauce"></td>
                         </tr>
                     </table>
 
@@ -199,23 +131,35 @@
     <div class="contenedor2">
       <div class="row">
         <div class="col-md-6">
-          <div class="item" id="ingredients">
-            <input type="button" value="Genera una tabla" onclick="genera_tabla()" />
+          <div class="item" ><label><b>List of ingredients</b></label>
+
+            <table class="table" id="ingredients">
+              
+            </table>
+            
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-6">
-          <div class="item" id="boxSelected">
+          <div class="item"><p><b>Selected ingredients</b></p>
+            <div class="user" id="boxSelected">
           
             
+            </div>
+          
+            <div class="user" ><p><b>Final SelfSandwich!</b></p>
+          
+            
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <script>
-        var vboxSelected = document.getElementById("boxSelected");
+<script>
+  const arreglo = [];
+  let stringTable ="<tr><th>Ingrediente</th><th>Price</th></tr>";
+var vboxSelected = document.getElementById("boxSelected");
         var vboxBread = document.getElementById("boxBread");
         var vboxProtein = document.getElementById("boxProtein");
         var vboxCheese = document.getElementById("boxCheese");
@@ -227,8 +171,6 @@
         var vege = document.getElementsByClassName("vegetable");
         var brea = document.getElementsByClassName("bread");
         var sauc = document.getElementsByClassName("sauce");
-        
-        listaDeItems={'white':5, 'whole':7, 'garlic':10};
         
     
         vboxSelected.addEventListener("dragover",(ev) => allowDrop(ev));
@@ -281,69 +223,52 @@
           var data = ev.dataTransfer.getData("id");
           vboxSelected.appendChild(document.getElementById(data));
           console.log(data);
-          let int32View = new Int32Array(buffer);
-          for (let i = 0; i < int32View.length; i++) {
-            int32View[i] = data;
-          }
-          console.log(int32View[0]);
-        }
-        function genera_tabla() {
-      // Obtener la referencia del elemento body
-      var body = document.getElementsByTagName("body")[0];
-
-      // Crea un elemento <table> y un elemento <tbody>
-      var tabla = document.createElement("table");
-      var tblBody = document.createElement("tbody");
-
-      // Crea las celdas
-      for (var i = 0; i < 5; i++) {
-        // Crea las hileras de la tabla
-        var hilera = document.createElement("tr");
-
-        for (var j = 0; j < 2 ; j++) {
-          // Crea un elemento <td> y un nodo de texto, haz que el nodo de
-          // texto sea el contenido de <td>, ubica el elemento <td> al final
-          // de la hilera de la tabla
-          var celda = document.createElement("td");
-          var textoCelda = document.createTextNode(
-            "celda en la hilera " + i + ", columna " + j,);
-          celda.appendChild(textoCelda);
-          hilera.appendChild(celda);
-        }
-
-        // agrega la hilera al final de la tabla (al final del elemento tblbody)
-        tblBody.appendChild(hilera);
-      }
-
-      // posiciona el <tbody> debajo del elemento <table>
-      tabla.appendChild(tblBody);
-      // appends <table> into <body>
-      body.appendChild(tabla);
-      // modifica el atributo "border" de la tabla y lo fija a "2";
-      tabla.setAttribute("border", "2");
-      }
-        
+          arreglo.push(data);
+          console.log(arreglo);
           
+
+          //if(arreglo[0] != "" && arreglo[1] !="" && arreglo[2] != ""){
+          // if(arreglo[0]=="protein" && arreglo[1]=="vegetable" && arreglo[2]=="cheese"){
+          // document.querySelector("h3").innerHTML = "Selected ingredients!"
+         //  }
+         // else{
+          //  document.querySelector("h3").innerHTML = "Check your ingredients!"
+          // }}
+            //for (var i=0;i<6;i++){
+           //   arreglo[i] = document.getElementById(data);
+           // }
             
-        
+            
           
 
+          //Test create a table
+          let tareas =[{White_Bread:"White_Bread", PriceWhiB:200}];
 
-          //switch(data) {
-           // case "white":
-           //   ingredients.println("Delicious White Bread");
-           //   break;
-           // case "whole":
-           // ingredients.println("Delicious White Bread");
-           //   break;
-           // case "garlic":
-           // ingredients.println("Delicious Garlic Bread");
-           //   break;
-           // default:
-           // ingredients.println("i es mayor a tres.");
-          
-          
-        
+          let createTable = function(list){
+           // let stringTable ="<tr><th>Ingrediente</th><th>Price</th></tr>";
+            for (let tareas of list){
+              
+              let fila = "<tr><td>"
+                fila += tareas.White_Bread;
+                fila += "</td>"
+
+                fila += "<td>"
+                fila += tareas.PriceWhiB;
+                fila += "</td>"  
+
+                fila += "</tr>";
+                stringTable += fila;
+                //console.log(stringTable);
+            }
+              return stringTable;
+          };
+          document.getElementById("ingredients").innerHTML = createTable(tareas);
+          createTable(tareas);
+
+          //show arreglo
+
+            //console.log(arreglo);
+          }
     
         function drop1(ev) {
           if(ClassName == "protein"){
@@ -353,7 +278,7 @@
             console.log("return"+[data]);
             console.log(vboxProtein);
           }
-         else{
+          else{
             if(ClassName == "cheese"){
               ev.preventDefault();
               var data = ev.dataTransfer.getData("id");
@@ -368,8 +293,10 @@
               }
             }
           }
+
+          
+
+</script>
     
-        
-      </script>
 </body>
 </html>
