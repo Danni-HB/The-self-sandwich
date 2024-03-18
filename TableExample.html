@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+    <style>
+    img{
+        width: 80px;
+        height: 80px;
+      }
+      .tables{
+        border: 1px solid #000;
+        display:grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+      }
+      .contenedor {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      gap: 10px;
+      border: 2px solid #000;
+      padding: 20px; 
+      max-height: 500vh;
+      max-width: 90vh;
+      max-height: 1000px;
+      max-width: 900px;
+      overflow-y: auto;
+      overflow-x: auto;}
+
+      .rectangle {
+      border: 1px solid #000;
+      padding: 50px;
+      box-sizing: border-box;
+      padding: 10px;
+      width: 250px;
+      height: 300px;
+      box-sizing: content-box;}
+    </style>
+    <body>
+        <div class="contenedor">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="rectangle" id="boxBread">
+                        <table>
+                            <tr>
+                            <td><lable>White Bread</lable></td>
+                            <td><img src="WhiteBreadIcon.jpg" alt="" id="white" class="bread"></td>
+                            </tr>
+                            <tr>
+                            <td><lable>Wholemeal Bread</lable></td>
+                            <td><img src="wholemealBreadIcon.jpg" alt="" id="whole" class="bread"></td>
+                            </tr>
+                            <tr>
+                            <td><lable>Garlic Bread</lable></td>
+                            <td><img src="GarlicBreadIcon.jpg" alt="" id="garlic" class="bread"></td>
+                            </tr>
+                        </table>
+                    </div>    
+                </div>    
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                <div class="rectangle" id="boxSelected">
+                
+                    
+                </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                <div class="tables" >
+                    <table>
+                        <tr>
+                        <th>Ingredient</th>
+                        <th>Price</th>
+                        </tr>
+                        <tr>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                    </table>
+                    
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <input type="button" value="Genera una tabla" onclick="genera_tabla()" />
+
+        <script>
+        var vboxSelected = document.getElementById("boxSelected");
+        var vboxBread = document.getElementById("boxBread");
+        var brea = document.getElementsByClassName("bread");
+
+        vboxSelected.addEventListener("dragover",(ev) => allowDrop(ev));
+        vboxSelected.addEventListener("drop",(ev) => drop(ev));
+    
+        vboxBread.addEventListener("dragover",(ev) => allowDrop(ev));
+        vboxBread.addEventListener("drop",(ev) => drop1(ev));
+
+        
+        for (var i=0; i<brea.length; i++){
+          brea[i].setAttribute("draggable","true");
+          brea[i].addEventListener("dragstart",(ev) => startDrag(ev))
+        }
+
+        function startDrag(ev) {
+          ev.dataTransfer.setData("id", ev.target.id);
+        }
+        function allowDrop(ev) {
+          console.log("Dropping");
+          ev.preventDefault();
+        }
+        function drop(ev) {
+          ev.preventDefault();
+          var data = ev.dataTransfer.getData("id");
+          vboxSelected.appendChild(document.getElementById(data));
+          console.log(data);
+        }
+    
+        function genera_tabla(ev) {
+            // Obtener la referencia del elemento body
+            var body = document.getElementsByTagName("body")[0];
+      
+            // Crea un elemento <table> y un elemento <tbody>
+            var tabla = document.createElement("table");
+            var tblBody = document.createElement("tbody");
+      
+            // Crea las celdas
+            for (var i = 0; i < 5; i++) {
+              // Crea las hileras de la tabla
+              var hilera = document.createElement("tr");
+      
+              for (var j = 0; j < 2 ; j++) {
+                // Crea un elemento <td> y un nodo de texto, haz que el nodo de
+                // texto sea el contenido de <td>, ubica el elemento <td> al final
+                // de la hilera de la tabla
+                
+                var celda = document.createElement("td");
+                var data = ev.dataTransfer.getData("id");
+                var textoCelda = document.createTextNode(celda);
+                celda.appendChild(textoCelda);
+                hilera.appendChild(celda);
+              }
+      
+              // agrega la hilera al final de la tabla (al final del elemento tblbody)
+              tblBody.appendChild(hilera);
+            }
+      
+            // posiciona el <tbody> debajo del elemento <table>
+            tabla.appendChild(tblBody);
+            // appends <table> into <body>
+            body.appendChild(tabla);
+            // modifica el atributo "border" de la tabla y lo fija a "2";
+            //tabla.setAttribute("border", "2");
+            }
+        </script>      
+    </body>
+</html>
