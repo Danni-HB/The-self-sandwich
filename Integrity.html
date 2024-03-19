@@ -25,15 +25,15 @@
                     <table>
                         <tr>
                         <td><lable>White Bread</lable></td>
-                        <td><img src="Images\WhiteBreadIcon.jpg" alt="" id="white" class="bread"></td>
+                        <td><img src="Images\WhiteBreadIcon.png" alt="" id="white_Bread" class="bread"></td>
                         </tr>
                         <tr>
                         <td><lable>Wholemeal Bread</lable></td>
-                        <td><img src="Images\wholemealBreadIcon.jpg" alt="" id="whole" class="bread"></td>
+                        <td><img src="Images\wholemealBreadIcon.png" alt="" id="whole_Bread" class="bread"></td>
                         </tr>
                         <tr>
                         <td><lable>Garlic Bread</lable></td>
-                        <td><img src="Images\GarlicBreadIcon.jpg" alt="" id="garlic" class="bread"></td>
+                        <td><img src="Images\GarlicBreadIcon.png" alt="" id="garlic_Bread" class="bread"></td>
                         </tr>
                     </table>
                 </div>    
@@ -45,15 +45,15 @@
                     <table>
                         <tr>
                         <td><lable>RoastBeaf</lable></td>
-                        <td><img src="Images\BeafIcon.png" alt="" id="beaf" class="protein"></td>
+                        <td><img src="Images\BeafIcon.png" alt="" id="roast_Beaf" class="protein"></td>
                         </tr>
                         <tr>
                         <td><lable>GrillChicken</lable></td>
-                        <td><img src="Images\chickenIcon.jpg" alt="" id="chick" class="protein"></td>
+                        <td><img src="Images\chickenIcon.png" alt="" id="grill_chick" class="protein"></td>
                         </tr>
                         <tr>
                         <td><lable>Mushrooms</lable></td>
-                        <td><img src="Images\MushroomIcon.png" alt="" id="mush" class="protein"></td>
+                        <td><img src="Images\MushroomIcon.png" alt="" id="mushrooms" class="protein"></td>
                         </tr>
                     </table>
                 </div>
@@ -65,15 +65,15 @@
                     <table>
                         <tr>
                         <td><lable>Cheddar</lable></td>
-                        <td><img src="Images\cheddarIcon.png" alt="" id="chedd" class="cheese"></td>
+                        <td><img src="Images\cheddarIcon.png" alt="" id="cheddar" class="cheese"></td>
                         </tr>
                         <tr>
                         <td><lable>Gruyere</lable></td>
-                        <td><img src="Images\gruyereIcon.jpg" alt="" id="gruy" class="cheese"></td>
+                        <td><img src="Images\gruyereIcon.png" alt="" id="gruyere" class="cheese"></td>
                         </tr>
                         <tr>
                         <td><lable>Mozzarella</lable></td>
-                        <td><img src="Images\mozarellaIcon.png" alt="" id="moz" class="cheese"></td>
+                        <td><img src="Images\mozarellaIcon.png" alt="" id="mozzarella" class="cheese"></td>
                         </tr>
                     </table>
                 </div>
@@ -92,7 +92,7 @@
                     <table>
                         <tr>
                         <td><lable>Green Lettuce</lable></td>
-                        <td><img src="Images\GLettuceIcon.png" alt="" id="glettuce" class="vegetable"></td>
+                        <td><img src="Images\GLettuceIcon.png" alt="" id="green_Lettuce" class="vegetable"></td>
                         </tr>
                         <tr>
                         <td><lable>Pikles</lable></td>
@@ -100,7 +100,7 @@
                         </tr>
                         <tr>
                         <td><lable>Purple Lettuce</lable></td>
-                        <td><img src="Images\plettuceIcon.png" alt="" id="plettuce" class="vegetable"></td>
+                        <td><img src="Images\plettuceIcon.png" alt="" id="purple_Lettuce" class="vegetable"></td>
                         </tr>
                     </table>
                 </div>
@@ -112,15 +112,15 @@
                     <table>
                         <tr>
                         <td><lable>Hot Sauce</lable></td>
-                        <td><img src="Images\hotSauceIcon.png" alt="" id="hotSauce" class="sauce"></td>
+                        <td><img src="Images\hotSauceIcon.png" alt="" id="hot_Sauce" class="sauce"></td>
                         </tr>
                         <tr>
                         <td><lable>Mustard Sauce</lable></td>
-                        <td><img src="Images\mustardIcon.png" alt="" id="mustardSauce" class="sauce"></td>
+                        <td><img src="Images\mustardIcon.png" alt="" id="mustard_Sauce" class="sauce"></td>
                         </tr>
                         <tr>
                         <td><lable>Mayonnese Sauce</lable></td>
-                        <td><img src="Images\mayoSauceIcon.png" alt="" id="mayoSauce" class="sauce"></td>
+                        <td><img src="Images\mayoSauceIcon.png" alt="" id="mayo_Sauce" class="sauce"></td>
                         </tr>
                     </table>
 
@@ -237,33 +237,29 @@ var vboxSelected = document.getElementById("boxSelected");
             //for (var i=0;i<6;i++){
            //   arreglo[i] = document.getElementById(data);
            // }
-            
-            
-          
 
           //Test create a table
-          let tareas =[{White_Bread:"White_Bread", PriceWhiB:200}];
+          let PriceOfList =[{white_Bread:200, whole_Bread:500}];
 
-          let createTable = function(list){
-           // let stringTable ="<tr><th>Ingrediente</th><th>Price</th></tr>";
-            for (let tareas of list){
+          let createTable = function(arreglo){
+             let stringTable ="<tr><th>Ingrediente</th><th>Price</th></tr>";
+           // for (i=0;i<1;i++){
               
               let fila = "<tr><td>"
-                fila += tareas.White_Bread;
+                fila += arreglo;
                 fila += "</td>"
-
-                fila += "<td>"
-                fila += tareas.PriceWhiB;
-                fila += "</td>"  
+                //fila += "<td>"
+                //fila += arreglo;
+                //fila += "</td>"  
 
                 fila += "</tr>";
                 stringTable += fila;
                 //console.log(stringTable);
-            }
+            //}
               return stringTable;
           };
-          document.getElementById("ingredients").innerHTML = createTable(tareas);
-          createTable(tareas);
+          document.getElementById("ingredients").innerHTML = createTable(arreglo);
+          createTable(arreglo);
 
           //show arreglo
 
