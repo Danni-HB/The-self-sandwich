@@ -11,6 +11,7 @@
     
     <h1 class="header">THE SELF SANDWICH</h1>
     <h3 class="header">Create your sandwich</h3>
+
     <div class="contenedor">
         <div class="seccion">Bread</div>
         <div class="seccion">Protein</div>
@@ -157,6 +158,7 @@
       </div>
     </div>
 <script>
+ 
   const arreglo = [];
   let stringTable ="<tr><th>Ingrediente</th><th>Price</th></tr>";
 var vboxSelected = document.getElementById("boxSelected");
@@ -243,10 +245,10 @@ var vboxSelected = document.getElementById("boxSelected");
 
           let createTable = function(arreglo){
              let stringTable ="<tr><th>Ingrediente</th><th>Price</th></tr>";
-           // for (i=0;i<1;i++){
+           for (i=0;i<arreglo.length;i++){
               
               let fila = "<tr><td>"
-                fila += arreglo;
+                fila += arreglo[i];
                 fila += "</td>"
                 //fila += "<td>"
                 //fila += arreglo;
@@ -254,8 +256,7 @@ var vboxSelected = document.getElementById("boxSelected");
 
                 fila += "</tr>";
                 stringTable += fila;
-                //console.log(stringTable);
-            //}
+            }
               return stringTable;
           };
           document.getElementById("ingredients").innerHTML = createTable(arreglo);
@@ -274,23 +275,23 @@ var vboxSelected = document.getElementById("boxSelected");
             console.log("return"+[data]);
             console.log(vboxProtein);
           }
-          else{
-            if(ClassName == "cheese"){
-              ev.preventDefault();
-              var data = ev.dataTransfer.getData("id");
-              vboxCheese.appendChild(document.getElementById(data));
-              console.log("return"+[data]);}
-            else{
-              if(ClassName == "vegetable"){
-                ev.preventDefault();
-                var data = ev.dataTransfer.getData("id");
-                vboxVege.appendChild(document.getElementById(data));
-                console.log("return"+[data]);}
-              }
-            }
-          }
+          //else{
+          //  if(ClassName == "cheese"){
+          //    ev.preventDefault();
+          //    var data = ev.dataTransfer.getData("id");
+          //    vboxCheese.appendChild(document.getElementById(data));
+          //    console.log("return"+[data]);}
+          //  else{
+          //    if(ClassName == "vegetable"){
+          //      ev.preventDefault();
+          //      var data = ev.dataTransfer.getData("id");
+          //      vboxVege.appendChild(document.getElementById(data));
+          //      console.log("return"+[data]);}
+          //    }
+          //  }
+        }
 
-          
+         
 
 </script>
     
