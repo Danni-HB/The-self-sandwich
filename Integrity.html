@@ -9,9 +9,10 @@
 </head>
 <body>
     
-    <h1 class="header">THE SELF SANDWICH</h1>
+    
+    <img src="Images\logo.png" alt="" id="logo">
     <h3 class="header">Create your sandwich</h3>
-
+    
     <div class="contenedor">
         <div class="seccion">Bread</div>
         <div class="seccion">Protein</div>
@@ -132,64 +133,65 @@
     <div class="contenedor2">
       <div class="row">
         <div class="col-md-6">
-          <div class="item" ><label><b>List of ingredients</b></label>
-
-            <table class="table" id="ingredients">
-              
-            </table>
+          <div class="item"><label><b>Selected ingredients</b></label>
+            <div class="user" id="boxSelected">
+          
             
+            </div>
+            <label><b>Final SelfSandwich!</b></label>
+            <div  >
+              <button onclick="showimage()">Order</button> 
+              <img src="Images\sandwich.png" alt="" id="orderSandwich">
+            </div>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-6">
-          <div class="item"><p><b>Selected ingredients</b></p>
-            <div class="user" id="boxSelected">
-          
-            
-            </div>
-          
-            <div class="user" ><p><b>Final SelfSandwich!</b></p>
-          
-            
-            </div>
+          <div class="item2" ><label><b>List of ingredients</b></label>
+            <table class="table" id="ingredients">
+            </table>
           </div>
         </div>
       </div>
     </div>
+    
 <script>
- 
+ //ClassName("protein")=["roast_Beaf", "grill_chick" , "mushrooms"]
+
+
   const arreglo = [];
   let stringTable ="<tr><th>Ingrediente</th><th>Price</th></tr>";
-var vboxSelected = document.getElementById("boxSelected");
+        var vboxSelected = document.getElementById("boxSelected");
         var vboxBread = document.getElementById("boxBread");
         var vboxProtein = document.getElementById("boxProtein");
         var vboxCheese = document.getElementById("boxCheese");
         var vboxVege = document.getElementById("boxVege");
         var vboxSauce = document.getElementById("boxSauce");
         var vboxIngredient = document.getElementById("vboxIngredient");
+        var brea = document.getElementsByClassName("bread");
         var ptin = document.getElementsByClassName("protein");
         var chees = document.getElementsByClassName("cheese");
         var vege = document.getElementsByClassName("vegetable");
-        var brea = document.getElementsByClassName("bread");
         var sauc = document.getElementsByClassName("sauce");
+
         
     
         vboxSelected.addEventListener("dragover",(ev) => allowDrop(ev));
         vboxSelected.addEventListener("drop",(ev) => drop(ev));
     
         vboxProtein.addEventListener("dragover",(ev) => allowDrop(ev));
-        vboxProtein.addEventListener("drop",(ev) => drop1(ev));
+        vboxProtein.addEventListener("drop1",(ev) => drop1(ev));
     
         vboxCheese.addEventListener("dragover",(ev) => allowDrop(ev));
-        vboxCheese.addEventListener("drop",(ev) => drop1(ev));
+        vboxCheese.addEventListener("drop1",(ev) => drop1(ev));
     
         vboxVege.addEventListener("dragover",(ev) => allowDrop(ev));
-        vboxVege.addEventListener("drop",(ev) => drop1(ev));
+        vboxVege.addEventListener("drop1",(ev) => drop1(ev));
 
         //vboxIngredient.createElement("Table")
 
-        for (var i=0; i<ptin.length; i++){
+        for (var i=0; i<brea.length; i++){
           brea[i].setAttribute("draggable","true");
           brea[i].addEventListener("dragstart",(ev) => startDrag(ev))
         }
@@ -227,15 +229,17 @@ var vboxSelected = document.getElementById("boxSelected");
           console.log(data);
           arreglo.push(data);
           console.log(arreglo);
-          
+          //console.log(ClassName["protein"]);
 
-          //if(arreglo[0] != "" && arreglo[1] !="" && arreglo[2] != ""){
-          // if(arreglo[0]=="protein" && arreglo[1]=="vegetable" && arreglo[2]=="cheese"){
-          // document.querySelector("h3").innerHTML = "Selected ingredients!"
-         //  }
-         // else{
-          //  document.querySelector("h3").innerHTML = "Check your ingredients!"
-          // }}
+        if(arreglo[0] != "" || arreglo[1] !="" || arreglo[2] != "" || arreglo[3] != "" || arreglo[4] != "")
+          {document.querySelector("h3").innerHTML = "Sandwich in process..."}
+        //else{
+          //if(arreglo[0] == "")}
+          //document.querySelector("h3").innerHTML = "Selected ingredients!"
+           //}
+         //else{
+           // document.querySelector("h3").innerHTML = "Check your ingredients!"
+          //}}
             //for (var i=0;i<6;i++){
            //   arreglo[i] = document.getElementById(data);
            // }
@@ -274,7 +278,8 @@ var vboxSelected = document.getElementById("boxSelected");
             vboxProtein.appendChild(document.getElementById(data));
             console.log("return"+[data]);
             console.log(vboxProtein);
-          }
+          }}
+
           //else{
           //  if(ClassName == "cheese"){
           //    ev.preventDefault();
@@ -289,7 +294,16 @@ var vboxSelected = document.getElementById("boxSelected");
           //      console.log("return"+[data]);}
           //    }
           //  }
+        
+
+        function showimage(){
+        var imagen = document.getElementById("orderSandwich");
+        if (imagen.style.display === "none") {
+          imagen.style.display = "block"; // Muestra la imagen
+        } else {
+          imagen.style.display = "none"; // Oculta la imagen
         }
+      }
 
          
 
