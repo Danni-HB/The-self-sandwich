@@ -11,7 +11,6 @@ body {
     align-items: center;
 
     height: 100vh;
-    cursor: url('sandwich-22.png'), auto;
     font-family: 'Arial', sans-serif;
     /* background-color: var(--subway-yellow);
     color: white; */
@@ -22,7 +21,7 @@ body {
     position: relative;
 
     /* URL to the image */
-    cursor: url('Images\cursor-_2_.png'), auto;
+    cursor: url('Images/cursor (2).cur'), default;
 
     overflow: auto;
 }
@@ -54,7 +53,7 @@ body {
     /*overflow-y: auto;*/
     /*overflow-x: auto;*/
     margin-bottom: 10px;
-    ;
+    
 }
 
 .seccion {
@@ -66,12 +65,19 @@ body {
 }
 
 .rectangle {
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     padding: 10px;
+    padding-left: 30px;
     box-sizing: border-box;
-    width: 250px;
+    width: 100%;
     height: 260px;
     box-sizing: fixed;
+    text-align:center;
+    align-items: center;
+    background-image: url("Images/trayBG.png");
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
 }
 
 .item{
@@ -111,14 +117,12 @@ img{
     height: 200px;
 }
     
-.row{
-    background-image: url('\Images\trayBG.png');
-    background-size: cover; /* Optional: Cover the entire area of the class */
-    background-repeat: no-repeat; /* Optional: Prevent the image from repeating */
-    background-position: center; /* Optional: Center the image within the class */
-}
+
 img:hover {
-    cursor: url("Images\cursor.png"), auto;
+    cursor: url('Images/cursor.cur'), default;
+}
+button:hover{
+    cursor: url('Images/cursor.cur'), default;
 }
 #orderSandwich{
     display: none; /* Oculta la imagen inicialmente */
