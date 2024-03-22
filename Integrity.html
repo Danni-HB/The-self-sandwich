@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="FProject.css">
   
-  
 </head>
 <body>
-    
-    
+     
     <img src="Images\logo.png" alt="" id="logo">
-    <h3 class="header"><p>Create your sandwich! Please drag and drop your prefered ingredients onto the Selected ingredients container.<br><p style="text-align: center;font-size: small ;">(You must select one and only one of each ingredient)<p></p></h3>
+    <h3 class="header">Create your sandwich! </h3> <p> Please drag and drop your prefered ingredients onto the Selected ingredients container.<br><p style="text-align: center;font-size: small ;">(You must select one and only one of each ingredient)<p></p>
     
     <div class="contenedor">
         <div class="seccion">Bread</div>
@@ -84,8 +82,8 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="rectangle">
-                    <button id="Toasted">Toasted</button>
-                    <button id="Warmed">Warmed</button>
+                    <button id="Toasted" onclick="toastFunct('Toasted')">Toasted</button><br><br>
+                    <button id="Warmed" onclick="toastFunct('Warmed')">Warmed</button>
                 </div>
             </div>
         </div>
@@ -139,9 +137,9 @@
           
             
             </div>
-            <label><b>Final SelfSandwich!</b></label>
+            <label id="final"><b>Final SelfSandwich!</b></label>
             <div  >
-              <button onclick="showimage()">Order</button> 
+              <button  id="order" onclick="showimage()">Order</button> 
               <img src="Images\sandwich.png" alt="" id="orderSandwich">
             </div>
           </div>
@@ -152,15 +150,13 @@
           <div class="item2" ><label><b>List of ingredients</b></label>
             <table class="table" id="ingredients">
             </table>
+            <label id="total"></label>
 
           </div>
         </div>
       </div>
     </div>
-    
-<script>
-
-
+   <script>
   const arreglo = [];
   const prices = [];
   let stringTable ="<tr><th>Ingrediente</th><th>Price</th></tr>";
@@ -190,15 +186,6 @@
     
         vboxSelected.addEventListener("dragover",(ev) => allowDrop(ev));
         vboxSelected.addEventListener("drop",(ev) => drop(ev));
-    
-        vboxProtein.addEventListener("dragover",(ev) => allowDrop(ev));
-        vboxProtein.addEventListener("drop1",(ev) => drop1(ev));
-    
-        vboxCheese.addEventListener("dragover",(ev) => allowDrop(ev));
-        vboxCheese.addEventListener("drop1",(ev) => drop1(ev));
-    
-        vboxVege.addEventListener("dragover",(ev) => allowDrop(ev));
-        vboxVege.addEventListener("drop1",(ev) => drop1(ev));
 
 
         for (var i=0; i<brea.length; i++){
@@ -288,29 +275,22 @@
                 var price = listofSelected.mayo_Sauce;
                 break;    
             default:
-                console.log("Es otro día de la semana.");
+                console.log("Choose the ingredient.");
           }
           prices.push(price);
+          const OnlyValue = Object.values(prices);
+          const suma = OnlyValue.reduce((acumulador , elemento) => acumulador + elemento, 0);
+          console.log(suma);
+          let printTotal= document.getElementById("total");
+          printTotal.innerHTML = "<b>Total: </b>" + suma;
+        
 
-          const suma = prices.reduce((acumulador, elemento) => acumulador + elemento, 0);
-
-
-        if(arreglo[0] != "" || arreglo[1] !="" || arreglo[2] != "" || arreglo[3] != "" || arreglo[4] != "")
-          {document.querySelector("h3").innerHTML = "Sandwich in process..."}
-        //else{
-          //if(arreglo[0] == "")}
-          //document.querySelector("h3").innerHTML = "Selected ingredients!"
-           //}
-         //else{
-           // document.querySelector("h3").innerHTML = "Check your ingredients!"
-          //}}
-            //for (var i=0;i<6;i++){
-           //   arreglo[i] = document.getElementById(data);
-           // }
-
-          
-          
-
+          if (arreglo.length==5){
+          document.querySelector("h3").innerHTML = "Selected ingredients!"
+        }
+          else{
+            {document.querySelector("h3").innerHTML = "Sandwich in process..."}
+          }
           let createTable = function(arreglo){
              let stringTable ="<tr><th>Ingrediente</th><th>Price</th></tr>";
            for (i=0;i<arreglo.length;i++){
@@ -331,31 +311,6 @@
           createTable(arreglo);
           
           }
-    
-        function drop1(ev) {
-          if(ClassName == "protein"){
-            ev.preventDefault();
-            var data = ev.dataTransfer.getData("id");
-            vboxProtein.appendChild(document.getElementById(data));
-            console.log("return"+[data]);
-            console.log(vboxProtein);
-          }}
-
-          //else{
-          //  if(ClassName == "cheese"){
-          //    ev.preventDefault();
-          //    var data = ev.dataTransfer.getData("id");
-          //    vboxCheese.appendChild(document.getElementById(data));
-          //    console.log("return"+[data]);}
-          //  else{
-          //    if(ClassName == "vegetable"){
-          //      ev.preventDefault();
-          //      var data = ev.dataTransfer.getData("id");
-          //      vboxVege.appendChild(document.getElementById(data));
-          //      console.log("return"+[data]);}
-          //    }
-          //  }
-        
 
         function showimage(){
         var imagen = document.getElementById("orderSandwich");
@@ -367,7 +322,11 @@
         
       }
 
-</script>
-    
+      function toastFunct(x){
+        document.getElementById("final").innerHTML = "<b id='final'>Final SelfSandwich! - </b>" + x;
+      }
+
+
+   </script>    
 </body>
 </html>

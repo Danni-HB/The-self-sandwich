@@ -9,21 +9,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     height: 100vh;
     font-family: 'Arial', sans-serif;
-    /* background-color: var(--subway-yellow);
-    color: white; */
-
     background: linear-gradient(to bottom, var(--subway-green) 0%, var(--subway-yellow) 100%);
     height: 100vh;
-    overflow: hidden;
     position: relative;
-
     /* URL to the image */
     cursor: url('Images/cursor (2).cur'), default;
-
     overflow: auto;
+    
 }
   
 .header {
@@ -90,7 +84,7 @@ body {
     align-content: center;
 }
 .item2{
-    border: 1px solid #000;
+    border: 1px solid #012501;
     padding:5px;
     /*box2-sizing: border-box;*/
     width: 210px;
@@ -100,7 +94,7 @@ body {
 }
 
 .user{
-    border: 1px solid #000;
+    border: 5px solid #14ca14;
     box-sizing: content-box;
     margin-block: 10px;
     width: 310px;
@@ -131,4 +125,22 @@ button:hover{
     height: 100px;
     
 }
+#Toasted, #Warmed{
+    margin: 30px;
+    width: 100px;
+    height: 40px;
+    background-color: rgb(232, 194, 120);
+    font-style: oblique;
+    font-size: large;   
+}
+.boxtext{
+    border: 1px solid #000;
+}
+#order{
+    background-color: rgb(207, 236, 16);
+    font-style: oblique;
+    font-size: medium; 
+    width: 100px;
+    height: 40px;
 
+}
